@@ -12,6 +12,9 @@ uses
 
 type
   TSamaComponent = class(TBESENNativeObject)
+  private
+    tempCtrl: TWinControl;
+    procedure SetParentASyncCall(Data: ptrInt);
   protected
     procedure ConstructObject(const ThisArgument: TBESENValue;
       Arguments: PPBESENValues; CountArguments: integer); override;
@@ -34,13 +37,14 @@ constructor TSamaComponent.Create(AInstance: TObject;
   APrototype: TBESENObject = nil; AHasPrototypeProperty: longbool=false);
 begin
   inherited Create(AInstance, APrototype, AHasPrototypeProperty);
+  //SamaControl := TWinControl.Create(nil);
 end;
 
 constructor TSamaComponent.Create(Owner: TComponent; AInstance: TObject;
   APrototype: TBESENObject = nil; AHasPrototypeProperty: longbool=false);
 begin
   inherited Create(AInstance, APrototype, AHasPrototypeProperty);
-  SamaControl := TWinControl.Create(Owner);
+  //SamaControl := TWinControl.Create(Owner);
 
 end;
 
@@ -137,15 +141,20 @@ end;
 
 procedure TSamaComponent.Show;
 begin
-  SamaControl.Show;
+  SamaControl.Visible := True;
+end;
+
+procedure TSamaComponent.SetParentASyncCall(Data: ptrInt);
+begin
+  SamaControl.Parent := tempCtrl;
 end;
 
 procedure TSamaComponent.setParent(const ThisArgument: TBESENValue;
   Arguments: PPBESENValues; CountArguments:integer;var AResult:TBESENValue);
 begin
-  SamaControl.Parent := TSamaComponent(TBESEN(Instance).ToObj(Arguments^[0]^))
+  tempCtrl := TSamaComponent(TBESEN(Instance).ToObj(Arguments^[0]^))
     .SamaControl;
+  Application.QueueAsyncCall(@SetParentASyncCall, 0);
 end;
 
 end.
-
