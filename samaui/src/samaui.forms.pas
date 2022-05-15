@@ -11,6 +11,9 @@ uses
 
 type
   TSamaForm = class(TSamaComponent)
+  private
+    procedure ShowFormASyncCall(Data: ptrInt);
+    procedure CreateFormASyncCall(Data: ptrInt);
   protected
     procedure ConstructObject(const ThisArgument: TBESENValue;
       Arguments: PPBESENValues; CountArguments: integer); override;
@@ -26,6 +29,12 @@ type
 
 implementation
 
+procedure TSamaForm.CreateFormASyncCall(Data: ptrInt);
+begin
+  SamaControl := TTemplateForm.Create(nil);
+  //SamaControl.Parent := nil;
+end;
+
 constructor TSamaForm.Create(AInstance: TObject;
   APrototype: TBESENObject = nil; AHasPrototypeProperty: longbool=false);
 begin
@@ -37,7 +46,7 @@ constructor TSamaForm.Create(Owner: TComponent; AInstance: TObject;
   APrototype: TBESENObject = nil; AHasPrototypeProperty: longbool=false);
 begin
   inherited Create(AInstance, APrototype, AHasPrototypeProperty);
-  SamaControl := TTemplateForm.Create(Owner);
+
 end;
 
 procedure TSamaForm.ConstructObject(const ThisArgument: TBESENValue; Arguments: PPBESENValues; CountArguments: integer);
@@ -51,10 +60,15 @@ begin
   inherited Destroy;
 end;
 
+procedure TSamaForm.ShowFormAsyncCall(Data: ptrInt);
+begin
+  SamaControl.Show;
+end;
+
 procedure TSamaForm.Show;
 begin
-  inherited Show;
+  Application.QueueAsyncCall(@ShowFormAsyncCall, 0);
+  //inherited Show;
 end;
 
 end.
-
