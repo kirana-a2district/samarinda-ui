@@ -17,8 +17,6 @@ type
   public
     constructor Create(AInstance: TObject; APrototype: TBESENObject = nil;
       AHasPrototypeProperty: longbool=false); overload; override;
-    constructor Create(Owner: TComponent; AInstance: TObject; APrototype: TBESENObject = nil;
-      AHasPrototypeProperty: longbool=false); overload;
     destructor Destroy; override;
   published
     procedure Show; override;
@@ -33,13 +31,6 @@ constructor TSamaButton.Create(AInstance: TObject;
 begin
   inherited Create(AInstance, APrototype, AHasPrototypeProperty);
   SamaControl := TButton.Create(nil);
-end;
-
-constructor TSamaButton.Create(Owner: TComponent; AInstance: TObject;
-  APrototype: TBESENObject = nil; AHasPrototypeProperty: longbool=false);
-begin
-  inherited Create(AInstance, APrototype, AHasPrototypeProperty);
-  SamaControl := TButton.Create(Owner);
 end;
 
 procedure TSamaButton.ConstructObject(const ThisArgument: TBESENValue; Arguments: PPBESENValues; CountArguments: integer);

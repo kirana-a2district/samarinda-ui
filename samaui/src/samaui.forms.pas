@@ -20,8 +20,6 @@ type
   public
     constructor Create(AInstance: TObject; APrototype: TBESENObject = nil;
       AHasPrototypeProperty: longbool=false); overload; override;
-    constructor Create(Owner: TComponent; AInstance: TObject; APrototype: TBESENObject = nil;
-      AHasPrototypeProperty: longbool=false); overload;
     destructor Destroy; override;
   published
     procedure Show; override;
@@ -40,13 +38,6 @@ constructor TSamaForm.Create(AInstance: TObject;
 begin
   inherited Create(AInstance, APrototype, AHasPrototypeProperty);
   SamaControl := TTemplateForm.Create(nil);
-end;
-
-constructor TSamaForm.Create(Owner: TComponent; AInstance: TObject;
-  APrototype: TBESENObject = nil; AHasPrototypeProperty: longbool=false);
-begin
-  inherited Create(AInstance, APrototype, AHasPrototypeProperty);
-
 end;
 
 procedure TSamaForm.ConstructObject(const ThisArgument: TBESENValue; Arguments: PPBESENValues; CountArguments: integer);

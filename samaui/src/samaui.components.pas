@@ -22,8 +22,6 @@ type
     SamaControl: TWinControl;
     constructor Create(AInstance: TObject; APrototype: TBESENObject = nil;
       AHasPrototypeProperty: longbool=false); overload; override;
-    constructor Create(Owner: TComponent; AInstance: TObject; APrototype: TBESENObject = nil;
-      AHasPrototypeProperty: longbool=false); overload;
     destructor Destroy; override;
   published
     procedure Show; virtual;
@@ -37,15 +35,6 @@ constructor TSamaComponent.Create(AInstance: TObject;
   APrototype: TBESENObject = nil; AHasPrototypeProperty: longbool=false);
 begin
   inherited Create(AInstance, APrototype, AHasPrototypeProperty);
-  //SamaControl := TWinControl.Create(nil);
-end;
-
-constructor TSamaComponent.Create(Owner: TComponent; AInstance: TObject;
-  APrototype: TBESENObject = nil; AHasPrototypeProperty: longbool=false);
-begin
-  inherited Create(AInstance, APrototype, AHasPrototypeProperty);
-  //SamaControl := TWinControl.Create(Owner);
-
 end;
 
 procedure TSamaComponent.ConstructObject(const ThisArgument: TBESENValue; Arguments: PPBESENValues; CountArguments: integer);
