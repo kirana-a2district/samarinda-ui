@@ -1,0 +1,8 @@
+object TemplateForm: TTemplateForm
+  Left = 352
+  Height = 240
+  Top = 250
+  Width = 320
+  Caption = 'TemplateForm'
+  DesignTimePPI = 120
+end
