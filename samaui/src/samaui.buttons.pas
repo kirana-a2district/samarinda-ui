@@ -1,16 +1,19 @@
-unit SamaUI.Buttons;
+unit SamaUI.Forms;
 
 {$mode ObjFPC}{$H+}
 
 interface
 
 uses
-  Classes, SysUtils, StdCtrls, BESENNativeObject, BESENValue, BESENObject,
-  SamaUI.Components, Dialogs,
+  Classes, SysUtils, Forms, BESENNativeObject, BESENValue, BESENObject,
+  SamaUI.Components,
   samaui_template_form;
 
 type
-  TSamaButton = class(TSamaComponent)
+  TSamaForm = class(TSamaComponent)
+  private
+    procedure ShowFormASyncCall(Data: ptrInt);
+    procedure CreateFormASyncCall(Data: ptrInt);
   protected
     procedure ConstructObject(const ThisArgument: TBESENValue;
       Arguments: PPBESENValues; CountArguments: integer); override;
@@ -22,48 +25,50 @@ type
     destructor Destroy; override;
   published
     procedure Show; override;
-    procedure setParent(const ThisArgument: TBESENValue; Arguments: PPBESENValues;
-  CountArguments:integer;var AResult:TBESENValue); override;
   end;
 
 implementation
 
-constructor TSamaButton.Create(AInstance: TObject;
+procedure TSamaForm.CreateFormASyncCall(Data: ptrInt);
+begin
+  SamaControl := TTemplateForm.Create(nil);
+  //SamaControl.Parent := nil;
+end;
+
+constructor TSamaForm.Create(AInstance: TObject;
   APrototype: TBESENObject = nil; AHasPrototypeProperty: longbool=false);
 begin
   inherited Create(AInstance, APrototype, AHasPrototypeProperty);
-  SamaControl := TButton.Create(nil);
+  SamaControl := TTemplateForm.Create(nil);
 end;
 
-constructor TSamaButton.Create(Owner: TComponent; AInstance: TObject;
+constructor TSamaForm.Create(Owner: TComponent; AInstance: TObject;
   APrototype: TBESENObject = nil; AHasPrototypeProperty: longbool=false);
 begin
   inherited Create(AInstance, APrototype, AHasPrototypeProperty);
-  SamaControl := TButton.Create(Owner);
+
 end;
 
-procedure TSamaButton.ConstructObject(const ThisArgument: TBESENValue; Arguments: PPBESENValues; CountArguments: integer);
+procedure TSamaForm.ConstructObject(const ThisArgument: TBESENValue; Arguments: PPBESENValues; CountArguments: integer);
 begin
   inherited ConstructObject(ThisArgument, Arguments, CountArguments);
 end;
 
-destructor TSamaButton.Destroy;
+destructor TSamaForm.Destroy;
 begin
   SamaControl.Free;
   inherited Destroy;
 end;
 
-procedure TSamaButton.Show;
+procedure TSamaForm.ShowFormAsyncCall(Data: ptrInt);
 begin
-  inherited Show;
+  SamaControl.Show;
 end;
 
-procedure TSamaButton.setParent(const ThisArgument: TBESENValue; Arguments: PPBESENValues;
-  CountArguments:integer;var AResult:TBESENValue);
+procedure TSamaForm.Show;
 begin
-  inherited setParent(ThisArgument, Arguments, CountArguments, AResult);
-  //ShowMessage(TButton(AParent).Caption);
+  Application.QueueAsyncCall(@ShowFormAsyncCall, 0);
+  //inherited Show;
 end;
 
 end.
-
