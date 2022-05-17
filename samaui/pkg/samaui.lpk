@@ -49,6 +49,14 @@
         <Filename Value="..\src\samaui.buttons.pas"/>
         <UnitName Value="SamaUI.Buttons"/>
       </Item>
+      <Item>
+        <Filename Value="..\src\samaui.formhandler.pas"/>
+        <UnitName Value="samaui.formhandler"/>
+      </Item>
+      <Item>
+        <Filename Value="..\..\vendors\besen\src\BESENObjectPropertyDescriptor.pas"/>
+        <UnitName Value="BESENObjectPropertyDescriptor"/>
+      </Item>
     </Files>
     <RequiredPkgs>
       <Item>

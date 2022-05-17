@@ -8,9 +8,11 @@ uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls,
   ComCtrls, SynEdit, SynHighlighterJScript, Besen, BESENValue, BESENObject,
   BESENErrors, BESENObjectPrototype, BESENNativeObject, BESENConstants,
-  SamaUI.Forms, SamaUI.Components, SamaUI.Buttons;
+  SamaUI.Forms, SamaUI.Components, SamaUI.Buttons, SamaUI.FormHandler;
 
 type
+
+  TProcCallback = procedure (Sender: TObject) of object;
 
   { TForm1 }
 
@@ -42,9 +44,12 @@ implementation
 
 procedure TForm1.btnExecClick(Sender: TObject);
 var
-  i: integer;
+  CallProc: TProcCallback;
 begin
   RunScript(codeEditor.Text);
+  //TMethod(CallProc).Code := MethodAddress('Panel1Click');
+  //TMethod(CallProc).Data := Self;
+  //CallProc(Sender);
 end;
 
 procedure TForm1.Info(const ThisArgument: TBESENValue; Arguments: PPBESENValues;
@@ -56,7 +61,13 @@ end;
 
 
 procedure TForm1.RunScript(const Lines: String);
+//var
+  //UI: TCustomSamaUI;
 begin
+  //UI := TCustomSamaUI.Create(nil);
+  //UI.Name := 'Moyang';
+  //UI.Init;
+
    try
       BesenInst.Execute(Lines);
    except
@@ -82,7 +93,7 @@ end;
 
 procedure TForm1.Panel1Click(Sender: TObject);
 begin
-
+  ShowMessage('WOW');
 end;
 
 end.

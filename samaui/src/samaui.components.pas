@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, Forms, BESEN, BESENNativeObject, BESENValue, BESENObject,
   BESENTypes, BESENObjectPrototype, fpjson, jsonparser, typinfo, Graphics,
-  Controls, Dialogs,
+  Controls, Dialogs, FGL,
   samaui_template_form;
 
 type
@@ -29,6 +29,10 @@ type
   CountArguments:integer;var AResult:TBESENValue); virtual;
   end;
 
+  TSamaComponentMap = class(specialize TFPGMap<string, TComponent>)
+
+  end;
+
 implementation
 
 constructor TSamaComponent.Create(AInstance: TObject;
@@ -48,7 +52,7 @@ var
   val: TBESENValue;
 begin
   inherited ConstructObject(ThisArgument, Arguments, CountArguments);
-
+  ShowMessage(TBESEN(Instance).ToStr(ThisArgument));
 
   TBesen(Instance).ObjectJSON.NativeStringify(ThisArgument, Arguments, CountArguments, val);
   //ShowMessage(val.Str);

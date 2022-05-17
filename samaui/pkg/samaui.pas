@@ -10,7 +10,7 @@ interface
 uses
   SamaUI.Forms, BESEN, BESENErrors, BESENNativeObject, BESENObject, 
   BESENValue, samaui_template_form, SamaUI.Components, SamaUI.Buttons, 
-  LazarusPackageIntf;
+  SamaUI.FormHandler, BESENObjectPropertyDescriptor, LazarusPackageIntf;
 
 implementation
 
