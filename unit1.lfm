@@ -1,14 +1,14 @@
 object Form1: TForm1
   Left = 352
-  Height = 588
+  Height = 553
   Top = 250
-  Width = 839
-  Caption = 'Fake JS UI Builder Prototype'
-  ClientHeight = 588
-  ClientWidth = 839
+  Width = 931
+  Caption = 'Form1'
+  ClientHeight = 553
+  ClientWidth = 931
   DesignTimePPI = 120
   OnCreate = FormCreate
-  Position = poScreenCenter
+  LCLVersion = '2.2.0.4'
   object btnExec: TButton
     Left = 16
     Height = 32
@@ -20,9 +20,9 @@ object Form1: TForm1
   end
   inline codeEditor: TSynEdit
     Left = 6
-    Height = 335
+    Height = 303
     Top = 49
-    Width = 826
+    Width = 914
     Anchors = [akTop, akLeft, akRight, akBottom]
     Color = clBlack
     Font.CharSet = ANSI_CHARSET
@@ -33,7 +33,7 @@ object Form1: TForm1
     ParentColor = False
     ParentFont = False
     TabOrder = 1
-    Gutter.Width = 72
+    Gutter.Width = 70
     Gutter.MouseActions = <>
     RightGutter.Width = 0
     RightGutter.MouseActions = <>
@@ -463,22 +463,8 @@ object Form1: TForm1
     MouseTextActions = <>
     MouseSelActions = <>
     Lines.Strings = (
-      'Window = new SamaForm({'
-      '  Caption: "nene moyang",'
-      '  Position: "poScreenCenter",'
-      '  OnClick: "OnClick"'
-      '});'
-      'btnSomething = new SamaButton({'
-      '  Caption: "somthing",'
-      '  Top: 10,'
-      '  Left: 10,'
-      '  Width: 70,'
-      '  Height: 20,'
-      '  AutoSize: true'
-      ''
-      '}, Window);'
-      ''
-      'Window.Show();'
+      'Caption: "New Form"'
+      'Position: poScreenCenter   '
     )
     VisibleSpecialChars = [vscSpace, vscTabAtLast]
     SelectedColor.BackPriority = 50
@@ -538,22 +524,22 @@ object Form1: TForm1
   end
   object PageControl1: TPageControl
     Left = 6
-    Height = 190
-    Top = 392
-    Width = 826
+    Height = 185
+    Top = 360
+    Width = 914
     ActivePage = TabSheet1
     Anchors = [akLeft, akRight, akBottom]
     TabIndex = 0
     TabOrder = 2
     object TabSheet1: TTabSheet
       Caption = 'Messages'
-      ClientHeight = 157
-      ClientWidth = 818
+      ClientHeight = 152
+      ClientWidth = 906
       object lbMessages: TListBox
         Left = 0
-        Height = 157
+        Height = 152
         Top = 0
-        Width = 818
+        Width = 906
         Align = alClient
         ItemHeight = 0
         TabOrder = 0
@@ -571,7 +557,7 @@ object Form1: TForm1
     NumberAttri.Foreground = 4227327
     StringAttri.Foreground = 14548660
     SymbolAttri.Foreground = clAqua
-    Left = 577
-    Top = 15
+    Left = 611
+    Top = 49
   end
 end

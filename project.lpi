@@ -29,7 +29,7 @@
         <PackageName Value="SynEdit"/>
       </Item>
       <Item>
-        <PackageName Value="samaui"/>
+        <PackageName Value="lapislson"/>
       </Item>
       <Item>
         <PackageName Value="LCL"/>
@@ -48,16 +48,43 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
       </Unit>
+      <Unit>
+        <Filename Value="samarinda-ui\src\samarinda.forms.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Samarinda.Forms"/>
+      </Unit>
+      <Unit>
+        <Filename Value="samarinda-ui\src\template_form\samaui_template_form.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TemplateForm"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="samarinda-ui\src\samarinda.widgets.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Samarinda.Widgets"/>
+      </Unit>
+      <Unit>
+        <Filename Value="samarinda-ui\src\samarinda.buttons.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Samarinda.Buttons"/>
+      </Unit>
+      <Unit>
+        <Filename Value="samarinda-ui\src\samarinda.widgethandler.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Samarinda.WidgetHandler"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
     <Version Value="11"/>
     <PathDelim Value="\"/>
     <Target>
-      <Filename Value="build\$(TargetCPU)-$(TargetOS)\fake-ide"/>
+      <Filename Value="project"/>
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value="samarinda-ui\src;samarinda-ui\src\template_form"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>
