@@ -8,7 +8,6 @@ object Form1: TForm1
   ClientWidth = 931
   DesignTimePPI = 120
   OnCreate = FormCreate
-  LCLVersion = '2.2.0.4'
   object btnExec: TButton
     Left = 16
     Height = 32
@@ -33,7 +32,7 @@ object Form1: TForm1
     ParentColor = False
     ParentFont = False
     TabOrder = 1
-    Gutter.Width = 70
+    Gutter.Width = 72
     Gutter.MouseActions = <>
     RightGutter.Width = 0
     RightGutter.MouseActions = <>
@@ -464,7 +463,19 @@ object Form1: TForm1
     MouseSelActions = <>
     Lines.Strings = (
       'Caption: "New Form"'
-      'Position: poScreenCenter   '
+      'Position: poScreenCenter'
+      'Button.btn1 {'
+      '  Caption: "hello"'
+      '}'
+      'Container.Container {'
+      '  Top: 70'
+      '  Width: 300'
+      '  Height: 200'
+      '  Caption: "this is container"'
+      '  Button.btn2 {'
+      '    Caption: "Button 2 inside of container"'
+      '  }'
+      '}'
     )
     VisibleSpecialChars = [vscSpace, vscTabAtLast]
     SelectedColor.BackPriority = 50

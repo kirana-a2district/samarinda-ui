@@ -16,6 +16,7 @@ type
     WidgetNode: TLSONNode;
   public
     WidgetControl: TWinControl;
+    FormInstance: TComponent;
     procedure InitNode(ANode: TLSONNode); virtual;
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
@@ -25,7 +26,9 @@ type
 
 implementation
 uses
-  Samarinda.WidgetHandler;
+  Samarinda.WidgetHandler,
+  Samarinda.Forms;
+
 
 constructor TCustomWidget.Create(AOwner: TComponent);
 begin
@@ -42,18 +45,19 @@ var
   cInfo: pointer;
   cPropInfo: PPropInfo;
   i: integer;
+  SL: TStrings;
 begin
   WidgetNode := ANode;
-  Name := WidgetNode.FindNode('name').AttrValue.ToString;
+  //Name := WidgetNode.FindNode('name').AttrValue.ToString;
 
   WidgetNode.HandledObject := Self;
   cInfo := WidgetControl.ClassInfo;
-  //ShowMessage('HALO');
   for i := 0 to WidgetNode.Childs.Count - 1 do begin
-    //ShowMessage(WidgetNode.Childs.Keys[i] + ': ' + WidgetNode.Childs.Data[i].AttrValue.Value);
+
     case WidgetNode.Childs.Data[i].AttrType of
       atvString:
       begin
+        //ShowMessage(WidgetNode.Childs.Keys[i]);
         cPropInfo := GetPropInfo(cInfo, WidgetNode.Childs.Keys[i]);
         SetStrProp(WidgetControl, cPropInfo, WidgetNode.Childs.Data[i].AttrValue.AsString);
       end;
@@ -74,13 +78,23 @@ begin
       end;
       atvObject:
       begin
-        WidgetNode.Childs.Data[i].HandledObject := TCustomWidgetClass(
-          WidgetClassMap[WidgetNode.Childs.Keys[i]]).Create(Self);
-        ShowMessage('object');
-      //  if Anode.Parent <> nil then
-      //    Print('[Object] Node: ' + AName + '; Parent: ' + Anode.Parent.NodeName)
-      //  else
-      //    Print('[Object] Node: ' + AName);
+        SL := TStringList.Create;
+        SL.AddDelimitedText(WidgetNode.Childs.Keys[i], '.', True);
+
+        if TSamaForm(FormInstance).ComponentMap.IndexOf(SL[1])
+          = -1 then
+            TSamaForm(FormInstance).ComponentMap[SL[1]] :=
+            TCustomWidgetClass(WidgetClassMap[SL[0]]).Create(Self);
+        WidgetNode.Childs.Data[i].HandledObject :=
+          TSamaForm(FormInstance).ComponentMap[SL[1]];
+
+        TCustomWidget(WidgetNode.Childs.Data[i].HandledObject).FormInstance := Self.FormInstance;
+        TCustomWidget(WidgetNode.Childs.Data[i].HandledObject).InitNode(WidgetNode.Childs.Data[i]);
+        TCustomWidget(WidgetNode.Childs.Data[i].HandledObject).WidgetControl.Parent :=
+          Self.WidgetControl;
+
+        SL.Free;
+
       end;
     end;
   end;

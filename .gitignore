@@ -1,4 +1,5 @@
 /backup
 /lib
 /build/*
-/samaui/pkg/lib
+/samarinda-ui/src/backup
+/samarinda-ui/pkg/lib

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="5">
+    <PathDelim Value="\"/>
+    <Name Value="samarinda_ui"/>
+    <Type Value="RunAndDesignTime"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <OtherUnitFiles Value="..\src;..\src\template_form"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+    </CompilerOptions>
+    <Files>
+      <Item>
+        <Filename Value="..\src\samarinda.buttons.pas"/>
+        <UnitName Value="Samarinda.Buttons"/>
+      </Item>
+      <Item>
+        <Filename Value="..\src\samarinda.containers.pas"/>
+        <UnitName Value="Samarinda.Containers"/>
+      </Item>
+      <Item>
+        <Filename Value="..\src\samarinda.forms.pas"/>
+        <UnitName Value="Samarinda.Forms"/>
+      </Item>
+      <Item>
+        <Filename Value="..\src\samarinda.widgethandler.pas"/>
+        <UnitName Value="Samarinda.WidgetHandler"/>
+      </Item>
+      <Item>
+        <Filename Value="..\src\samarinda.widgets.pas"/>
+        <UnitName Value="Samarinda.Widgets"/>
+      </Item>
+      <Item>
+        <Filename Value="..\src\template_form\samaui_template_form.pas"/>
+        <UnitName Value="samaui_template_form"/>
+      </Item>
+    </Files>
+    <RequiredPkgs>
+      <Item>
+        <PackageName Value="lapislson"/>
+      </Item>
+      <Item>
+        <PackageName Value="LCL"/>
+      </Item>
+      <Item>
+        <PackageName Value="FCL"/>
+      </Item>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+      <UseFileFilters Value="True"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>

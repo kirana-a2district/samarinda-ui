@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, StdCtrls,
-  Lapis.Lson,
+  Lapis.Lson, Dialogs,
   Samarinda.Widgets;
 
 type
@@ -17,8 +17,6 @@ type
     destructor Destroy; override;
   end;
 
-  TButtonWidgetClass = class of TButtonWidget;
-
 implementation
 uses
   Samarinda.WidgetHandler;
@@ -27,6 +25,7 @@ constructor TButtonWidget.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
   WidgetControl := TButton.Create(Self);
+  TButton(WidgetControl).AutoSize := True;
 end;
 
 destructor TButtonWidget.Destroy;
@@ -41,8 +40,6 @@ begin
 end;
 
 initialization
-
-WidgetClassMap.Add('button', TButtonWidget);
-
+RegisterWidget('button', TButtonWidget);
 end.
 
