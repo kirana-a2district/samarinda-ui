@@ -10,17 +10,19 @@ uses
   Lapis.Lson, Samarinda.Widgets;
 
 type
-  TComponentMap = specialize TFPGMap<string, TComponent>;
+  TProcCallBack = procedure of object;
+  TWidgetMap = specialize TFPGMap<string, TComponent>;
 
   TSamaForm = class(TTemplateForm)
   private
     Parser: TLSONNode;
   public
-    ComponentMap: TComponentMap;
+    WidgetMap: TWidgetMap;
+    WidgetNodeMap: TWidgetMap;
     procedure LoadFromString(AVal: string);
-    //procedure AfterLsonParse(AComponent: TComponent); virtual;
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
+    procedure PostLoad; virtual;
   end;
 
 implementation
@@ -30,15 +32,22 @@ uses
 constructor TSamaForm.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
-  ComponentMap := TComponentMap.Create;
+  WidgetMap := TWidgetMap.Create;
+  WidgetNodeMap := TWidgetMap.Create;
 end;
 
 destructor TSamaForm.Destroy;
 begin
-  ComponentMap.Free;
+  WidgetMap.Free;
+  WidgetNodeMap.Free;
   if Assigned(Parser) then
     Parser.Free;
   inherited Destroy;
+end;
+
+procedure TSamaForm.PostLoad;
+begin
+
 end;
 
 procedure TSamaForm.LoadFromString(AVal: string);
@@ -47,6 +56,9 @@ var
   cPropInfo: PPropInfo;
   i: integer;
   SL: TStrings;
+  CallProc: TProcCallBack;
+  ObjName, ClsName: string;
+  WidgetObj: TObject;
 begin
   if Assigned(Parser) then
     Parser.Free;
@@ -82,23 +94,49 @@ begin
       end;
       atvObject:
       begin
-        //ShowMessage(Parser.Childs.Keys[i]);
+
         SL := TStringList.Create;
         SL.AddDelimitedText(Parser.Childs.Keys[i], '.', True);
-        if ComponentMap.IndexOf(SL[1]) = -1 then
-          ComponentMap[SL[1]] := TCustomWidgetClass(
-            WidgetClassMap[SL[0]]).Create(Self);
+        ObjName := SL[1];
+        ClsName := SL[0];
+        //ShowMessage(SL[0] + ': ' +SL[1]);
+        if WidgetMap.IndexOf(SL[1]) = -1 then
+        begin
+          WidgetObj := TCustomWidgetClass(
+            WidgetClassMap[ClsName]).Create(Self);
+          Parser.Childs.Data[i].HandledObject := WidgetObj;
+          WidgetMap[ObjName] := TCustomWidget(WidgetObj).WidgetControl;
+          WidgetNodeMap[ObjName] := TCustomWidget(WidgetObj);
+        end
+        else
+        begin
+          Parser.Childs.Data[i].HandledObject := WidgetNodeMap[ObjName];
+        end;
 
-        Parser.Childs.Data[i].HandledObject := ComponentMap[SL[1]];
+        WidgetMap[ObjName].Name := ObjName;
+        //TCustomWidget(Parser.Childs.Data[i].HandledObject).Name := ObjName;
 
         TCustomWidget(Parser.Childs.Data[i].HandledObject).FormInstance := Self;
         TCustomWidget(Parser.Childs.Data[i].HandledObject).InitNode(Parser.Childs.Data[i]);
         TCustomWidget(Parser.Childs.Data[i].HandledObject).WidgetControl.Parent
           := Self;
         SL.Free;
+
       end;
     end;
   end;
+  //if Self.MethodAddress('PostLoad') <> nil then
+  //begin
+  //  TMethod(CallProc).Code := Self.MethodAddress('PostLoad');
+  //  TMethod(CallProc).Data := Self;
+  //  CallProc;
+  //  ShowMessage('not working');
+  //end
+  //else
+  //  ShowMessage('not working');
+
+  //ShowMessage('not working');
+  PostLoad;
 end;
 
 end.

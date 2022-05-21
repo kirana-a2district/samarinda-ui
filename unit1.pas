@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ComCtrls,
-  SynEdit, SynHighlighterJScript, Samarinda.Forms;
+  SynEdit, SynHighlighterJScript, Samarinda.Forms, sample_form;
 
 type
 
@@ -23,7 +23,7 @@ type
     procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
-    Sama: TSamaForm;
+    Sama: TSample;
   public
 
   end;
@@ -51,7 +51,7 @@ end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
-  Sama := TSamaForm.Create(nil);
+  Sama := TSample.Create(nil);
 end;
 
 end.

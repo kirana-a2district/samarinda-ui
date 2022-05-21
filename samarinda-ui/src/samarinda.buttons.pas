@@ -30,8 +30,8 @@ end;
 
 destructor TButtonWidget.Destroy;
 begin
-  inherited Destroy;
   WidgetControl.Free;
+  inherited Destroy;
 end;
 
 procedure TButtonWidget.InitNode(ANode: TLSONNode);

@@ -46,9 +46,10 @@ var
   cPropInfo: PPropInfo;
   i: integer;
   SL: TStrings;
+  ObjName, ClsName: string;
+  WidgetObj: TObject;
 begin
   WidgetNode := ANode;
-  //Name := WidgetNode.FindNode('name').AttrValue.ToString;
 
   WidgetNode.HandledObject := Self;
   cInfo := WidgetControl.ClassInfo;
@@ -80,13 +81,27 @@ begin
       begin
         SL := TStringList.Create;
         SL.AddDelimitedText(WidgetNode.Childs.Keys[i], '.', True);
-
-        if TSamaForm(FormInstance).ComponentMap.IndexOf(SL[1])
+        ObjName := SL[1];
+        ClsName := SL[0];
+        //ShowMessage(SL[0] + ': ' +SL[1]);
+        if TSamaForm(FormInstance).WidgetMap.IndexOf(ObjName)
           = -1 then
-            TSamaForm(FormInstance).ComponentMap[SL[1]] :=
-            TCustomWidgetClass(WidgetClassMap[SL[0]]).Create(Self);
-        WidgetNode.Childs.Data[i].HandledObject :=
-          TSamaForm(FormInstance).ComponentMap[SL[1]];
+        begin
+          WidgetObj := TCustomWidgetClass(WidgetClassMap[ClsName]).Create(Self);
+          WidgetNode.Childs.Data[i].HandledObject := WidgetObj;
+          TSamaForm(FormInstance).WidgetMap[ObjName] :=
+            TCustomWidget(WidgetObj).WidgetControl;
+          TSamaForm(FormInstance).WidgetNodeMap[ObjName] :=
+            TCustomWidget(WidgetObj);
+        end
+        else
+        begin
+          WidgetNode.Childs.Data[i].HandledObject :=
+            TSamaForm(FormInstance).WidgetNodeMap[ObjName];
+        end;
+
+        TSamaForm(FormInstance).WidgetMap[ObjName].Name := ObjName;
+        //TCustomWidget(WidgetNode.Childs.Data[i].HandledObject).Name := ObjName;
 
         TCustomWidget(WidgetNode.Childs.Data[i].HandledObject).FormInstance := Self.FormInstance;
         TCustomWidget(WidgetNode.Childs.Data[i].HandledObject).InitNode(WidgetNode.Childs.Data[i]);
@@ -98,6 +113,7 @@ begin
       end;
     end;
   end;
+  //ShowMessage(WidgetControl.Caption);
 end;
 
 end.

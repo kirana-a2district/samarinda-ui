@@ -35,20 +35,13 @@ end;
 
 destructor TContainerWidget.Destroy;
 begin
-  inherited Destroy;
   WidgetControl.Free;
+  inherited Destroy;
 end;
 
 procedure TContainerWidget.InitNode(ANode: TLSONNode);
 begin
   inherited InitNode(ANode);
-  WidgetControl := TPanel.Create(Self);
-  with TPanel(WidgetControl) do
-  begin
-    ChildSizing.EnlargeHorizontal := crsHomogenousSpaceResize;
-    ChildSizing.EnlargeVertical := crsHomogenousSpaceResize;
-    ChildSizing.Layout := cclLeftToRightThenTopToBottom;
-  end;
 end;
 
 initialization

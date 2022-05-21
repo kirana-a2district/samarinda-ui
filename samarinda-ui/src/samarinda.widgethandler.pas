@@ -5,7 +5,7 @@ unit Samarinda.WidgetHandler;
 interface
 
 uses
-  Classes, SysUtils, fgl, Samarinda.Widgets;
+  Classes, SysUtils, fgl, Samarinda.Widgets, Samarinda.Buttons, Samarinda.Containers;
 
 procedure RegisterWidget(AClassName: string; AClass: TCustomWidgetClass);
 
