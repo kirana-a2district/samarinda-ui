@@ -8,7 +8,6 @@ object Form1: TForm1
   ClientWidth = 931
   DesignTimePPI = 120
   OnCreate = FormCreate
-  LCLVersion = '2.2.0.4'
   object btnExec: TButton
     Left = 16
     Height = 32
@@ -33,7 +32,7 @@ object Form1: TForm1
     ParentColor = False
     ParentFont = False
     TabOrder = 1
-    Gutter.Width = 70
+    Gutter.Width = 72
     Gutter.MouseActions = <>
     RightGutter.Width = 0
     RightGutter.MouseActions = <>
@@ -476,6 +475,13 @@ object Form1: TForm1
       '  Button.btn2 {'
       '    Caption: "Button 2 inside of container"'
       '  }'
+      '  Container.SubContainer{'
+      '    Caption: "container"'
+      '    Height: 100'
+      '    Button.btn3 {'
+      '      Caption: "button 3 anyway"'
+      '    }'
+      '  }'
       '}'
     )
     VisibleSpecialChars = [vscSpace, vscTabAtLast]
@@ -561,15 +567,15 @@ object Form1: TForm1
   object SynJScriptSyn1: TSynJScriptSyn
     Enabled = False
     BracketAttri.Foreground = 11416569
-    CommentAttri.Foreground = clScrollBar
-    IdentifierAttri.Foreground = clInactiveBorder
+    CommentAttri.Foreground = 12500670
+    IdentifierAttri.Foreground = clWhite
     KeyAttri.Foreground = clActiveCaption
     NonReservedKeyAttri.Foreground = 16757075
     EventAttri.Foreground = clWhite
     NumberAttri.Foreground = 4227327
     StringAttri.Foreground = 14548660
-    SymbolAttri.Foreground = clAqua
-    Left = 611
-    Top = 49
+    SymbolAttri.Foreground = 8826344
+    Left = 616
+    Top = 24
   end
 end

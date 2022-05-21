@@ -1,5 +1,3 @@
-/backup
-/lib
-/build/*
-/samarinda-ui/src/backup
-/samarinda-ui/pkg/lib
+**/backup
+**/lib
+**/build/*
