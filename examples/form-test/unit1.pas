@@ -54,6 +54,9 @@ end;
 procedure TForm1.FormCreate(Sender: TObject);
 begin
   Sama := TSample.Create(nil);
+  {$IFDEF UNIX}
+  codeEditor.Font.Name := 'default';
+  {$ENDIF}
 end;
 
 end.
