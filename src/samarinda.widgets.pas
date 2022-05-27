@@ -5,7 +5,7 @@ unit Samarinda.Widgets;
 interface
 
 uses
-  Classes, SysUtils, StdCtrls, ComCtrls, Controls, TypInfo, Dialogs,
+  Classes, SysUtils, ComCtrls, Controls, TypInfo, Dialogs,
   Lapis.Lson;
 
 type
@@ -15,7 +15,7 @@ type
   private
     WidgetNode: TLSONNode;
   public
-    WidgetControl: TWinControl;
+    WidgetControl: TControl;
     FormInstance: TComponent;
     procedure InitNode(ANode: TLSONNode); virtual;
     constructor Create(AOwner: TComponent); override;
@@ -80,7 +80,7 @@ begin
       atvObject:
       begin
         SL := TStringList.Create;
-        SL.AddDelimitedText(WidgetNode.Childs.Keys[i], '.', True);
+        SL.AddDelimitedText(WidgetNode.Childs.Keys[i], '/', True);
         ObjName := SL[1];
         ClsName := SL[0];
         //ShowMessage(SL[0] + ': ' +SL[1]);
@@ -106,7 +106,7 @@ begin
         TCustomWidget(WidgetNode.Childs.Data[i].HandledObject).FormInstance := Self.FormInstance;
         TCustomWidget(WidgetNode.Childs.Data[i].HandledObject).InitNode(WidgetNode.Childs.Data[i]);
         TCustomWidget(WidgetNode.Childs.Data[i].HandledObject).WidgetControl.Parent :=
-          Self.WidgetControl;
+          TWinControl(Self.WidgetControl);
 
         SL.Free;
 

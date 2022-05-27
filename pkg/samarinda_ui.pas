@@ -8,7 +8,7 @@ unit samarinda_ui;
 interface
 
 uses
-  Samarinda.Buttons, Samarinda.Containers, Samarinda.Forms, 
+  Samarinda.Buttons, Samarinda.Panels, Samarinda.Forms, 
   Samarinda.WidgetHandler, Samarinda.Widgets, samaui_template_form, 
   LazarusPackageIntf;
 

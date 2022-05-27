@@ -24,7 +24,9 @@ implementation
 procedure TSample.PostLoad;
 begin
   //ShowMessage(TWinControl(WidgetMap['btn1']).Caption);
-  TButton(WidgetMap['btn1']).OnClick := @ButtonClick;
+  // we map the event here
+  if WidgetMap.IndexOf('btn1') <> -1 then
+    TButton(WidgetMap['btn1']).OnClick := @ButtonClick;
 end;
 
 Constructor TSample.Create(AOwner: TComponent);

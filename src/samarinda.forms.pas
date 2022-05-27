@@ -96,9 +96,10 @@ begin
       begin
 
         SL := TStringList.Create;
-        SL.AddDelimitedText(Parser.Childs.Keys[i], '.', True);
+        SL.AddDelimitedText(Parser.Childs.Keys[i], '/', True);
         ObjName := SL[1];
         ClsName := SL[0];
+
         //ShowMessage(SL[0] + ': ' +SL[1]);
         if WidgetMap.IndexOf(SL[1]) = -1 then
         begin

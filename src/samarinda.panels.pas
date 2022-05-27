@@ -1,4 +1,4 @@
-unit Samarinda.Containers;
+unit Samarinda.Panels;
 
 {$mode ObjFPC}{$H+}
 
@@ -10,7 +10,7 @@ uses
   Samarinda.Widgets;
 
 type
-  TContainerWidget = class(TCustomWidget)
+  TPanelWidget = class(TCustomWidget)
   public
     procedure InitNode(ANode: TLSONNode); override;
     constructor Create(AOwner: TComponent); override;
@@ -21,7 +21,7 @@ implementation
 uses
   Samarinda.WidgetHandler;
 
-constructor TContainerWidget.Create(AOwner: TComponent);
+constructor TPanelWidget.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
   WidgetControl := TPanel.Create(Self);
@@ -33,18 +33,18 @@ begin
   end;
 end;
 
-destructor TContainerWidget.Destroy;
+destructor TPanelWidget.Destroy;
 begin
   WidgetControl.Free;
   inherited Destroy;
 end;
 
-procedure TContainerWidget.InitNode(ANode: TLSONNode);
+procedure TPanelWidget.InitNode(ANode: TLSONNode);
 begin
   inherited InitNode(ANode);
 end;
 
 initialization
-RegisterWidget('container', TContainerWidget);
+RegisterWidget('panel', TPanelWidget);
 end.
 

@@ -18,8 +18,8 @@
         <UnitName Value="Samarinda.Buttons"/>
       </Item>
       <Item>
-        <Filename Value="..\src\samarinda.containers.pas"/>
-        <UnitName Value="Samarinda.Containers"/>
+        <Filename Value="..\src\samarinda.panels.pas"/>
+        <UnitName Value="samarinda.panels"/>
       </Item>
       <Item>
         <Filename Value="..\src\samarinda.forms.pas"/>
