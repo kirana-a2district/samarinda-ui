@@ -47,6 +47,8 @@ procedure TForm1.btnExecClick(Sender: TObject);
 begin
   Sama.Show;
   Sama.LoadFromString(codeEditor.Text);
+  codeEditor.HighlightAllColor;
+  //btnExec.Constraints;
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);

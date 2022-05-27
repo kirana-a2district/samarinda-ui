@@ -6,8 +6,10 @@ interface
 
 uses
   Classes, SysUtils, Forms, resource, TypInfo,Controls,  Dialogs,
-  samaui_template_form, fgl,
-  Lapis.Lson, Samarinda.Widgets;
+  samaui_template_form, fgl, StrUtils,
+  Lapis.Lson,
+  Samarinda.Widgets,
+  Samarinda.ComUtils;
 
 type
   TProcCallBack = procedure of object;
@@ -59,6 +61,7 @@ var
   CallProc: TProcCallBack;
   ObjName, ClsName: string;
   WidgetObj: TObject;
+  ObjProp: TSamaObjectProperty;
 begin
   if Assigned(Parser) then
     Parser.Free;
@@ -94,34 +97,44 @@ begin
       end;
       atvObject:
       begin
-
-        SL := TStringList.Create;
-        SL.AddDelimitedText(Parser.Childs.Keys[i], '/', True);
-        ObjName := SL[1];
-        ClsName := SL[0];
-
-        //ShowMessage(SL[0] + ': ' +SL[1]);
-        if WidgetMap.IndexOf(SL[1]) = -1 then
+        if ContainsStr(Parser.Childs.Keys[i], '/') then
         begin
-          WidgetObj := TCustomWidgetClass(
-            WidgetClassMap[ClsName]).Create(Self);
-          Parser.Childs.Data[i].HandledObject := WidgetObj;
-          WidgetMap[ObjName] := TCustomWidget(WidgetObj).WidgetControl;
-          WidgetNodeMap[ObjName] := TCustomWidget(WidgetObj);
+          SL := TStringList.Create;
+          SL.AddDelimitedText(Parser.Childs.Keys[i], '/', True);
+          ObjName := SL[1];
+          ClsName := SL[0];
+
+          //ShowMessage(SL[0] + ': ' +SL[1]);
+          if WidgetMap.IndexOf(SL[1]) = -1 then
+          begin
+            WidgetObj := TCustomWidgetClass(
+              WidgetClassMap[ClsName]).Create(Self);
+            Parser.Childs.Data[i].HandledObject := WidgetObj;
+            WidgetMap[ObjName] := TCustomWidget(WidgetObj).WidgetControl;
+            WidgetNodeMap[ObjName] := TCustomWidget(WidgetObj);
+          end
+          else
+          begin
+            Parser.Childs.Data[i].HandledObject := WidgetNodeMap[ObjName];
+          end;
+
+          WidgetMap[ObjName].Name := ObjName;
+          //TCustomWidget(Parser.Childs.Data[i].HandledObject).Name := ObjName;
+
+          TCustomWidget(Parser.Childs.Data[i].HandledObject).FormInstance := Self;
+          TCustomWidget(Parser.Childs.Data[i].HandledObject).InitNode(Parser.Childs.Data[i]);
+          TCustomWidget(Parser.Childs.Data[i].HandledObject).WidgetControl.Parent
+            := Self;
+          SL.Free;
         end
         else
         begin
-          Parser.Childs.Data[i].HandledObject := WidgetNodeMap[ObjName];
+          ObjProp := TSamaObjectProperty.Create;
+          ObjProp.WidgetControl := TPersistent(GetObjectProp(WidgetObj, Parser.Childs.Keys[i]));
+          ObjProp.InitNode(Parser.Childs.Data[i]);
+
+          ObjProp.Free;
         end;
-
-        WidgetMap[ObjName].Name := ObjName;
-        //TCustomWidget(Parser.Childs.Data[i].HandledObject).Name := ObjName;
-
-        TCustomWidget(Parser.Childs.Data[i].HandledObject).FormInstance := Self;
-        TCustomWidget(Parser.Childs.Data[i].HandledObject).InitNode(Parser.Childs.Data[i]);
-        TCustomWidget(Parser.Childs.Data[i].HandledObject).WidgetControl.Parent
-          := Self;
-        SL.Free;
 
       end;
     end;

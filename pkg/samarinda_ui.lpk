@@ -19,7 +19,7 @@
       </Item>
       <Item>
         <Filename Value="..\src\samarinda.panels.pas"/>
-        <UnitName Value="samarinda.panels"/>
+        <UnitName Value="Samarinda.Panels"/>
       </Item>
       <Item>
         <Filename Value="..\src\samarinda.forms.pas"/>
@@ -36,6 +36,14 @@
       <Item>
         <Filename Value="..\src\template_form\samaui_template_form.pas"/>
         <UnitName Value="samaui_template_form"/>
+      </Item>
+      <Item>
+        <Filename Value="..\src\samarinda.comutils.pas"/>
+        <UnitName Value="Samarinda.ComUtils"/>
+      </Item>
+      <Item>
+        <Filename Value="..\src\samarinda.labels.pas"/>
+        <UnitName Value="Samarinda.Labels"/>
       </Item>
     </Files>
     <RequiredPkgs>

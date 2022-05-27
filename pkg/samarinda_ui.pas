@@ -10,7 +10,7 @@ interface
 uses
   Samarinda.Buttons, Samarinda.Panels, Samarinda.Forms, 
   Samarinda.WidgetHandler, Samarinda.Widgets, samaui_template_form, 
-  LazarusPackageIntf;
+  Samarinda.ComUtils, Samarinda.Labels, LazarusPackageIntf;
 
 implementation
 
