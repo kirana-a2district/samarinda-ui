@@ -53,6 +53,10 @@
         <Filename Value="..\src\template_form\base_window_maximisehint.pas"/>
         <UnitName Value="base_window_maximisehint"/>
       </Item>
+      <Item>
+        <Filename Value="..\src\samarinda.bcbuttons.pas"/>
+        <UnitName Value="samarinda.bcbuttons"/>
+      </Item>
     </Files>
     <RequiredPkgs>
       <Item>

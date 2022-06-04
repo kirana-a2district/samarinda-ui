@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, fgl, Samarinda.Widgets, Samarinda.Buttons, Samarinda.Panels,
-  Samarinda.Labels;
+  Samarinda.Labels, Samarinda.BCButtons;
 
 procedure RegisterWidget(AClassName: string; AClass: TCustomWidgetClass);
 

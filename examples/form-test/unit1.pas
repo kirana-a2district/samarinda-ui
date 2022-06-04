@@ -6,13 +6,14 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ComCtrls,
-  SynEdit, SynHighlighterJScript, Samarinda.Forms, sample_form;
+  BCButton, SynEdit, SynHighlighterJScript, Samarinda.Forms, sample_form;
 
 type
 
   { TForm1 }
 
   TForm1 = class(TForm)
+    BCButton1: TBCButton;
     btnExec: TButton;
     codeEditor: TSynEdit;
     lbMessages: TListBox;
@@ -48,6 +49,7 @@ begin
   Sama.Show;
   Sama.LoadFromString(codeEditor.Text);
   codeEditor.HighlightAllColor;
+  //BCButton1.BorderSpacing.CellAlignHorizontal;
   //btnExec.Constraints;
 end;
 

@@ -11,7 +11,7 @@ uses
   Samarinda.Buttons, Samarinda.Panels, Samarinda.Forms, 
   Samarinda.WidgetHandler, Samarinda.Widgets, samaui_template_form, 
   Samarinda.ComUtils, Samarinda.Labels, base_window, base_window_maximisehint, 
-  LazarusPackageIntf;
+  Samarinda.BCButtons, LazarusPackageIntf;
 
 implementation
 

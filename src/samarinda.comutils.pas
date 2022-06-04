@@ -41,11 +41,12 @@ procedure TSamaObjectProperty.InitNode(ANode: TLSONNode);
 var
   cInfo: pointer;
   cPropInfo: PPropInfo;
-  i: integer;
+  i, j: integer;
   SL: TStrings;
   ObjName, ClsName: string;
   WidgetObj: TObject;
   ObjProp: TSamaObjectProperty;
+  propList: PPropList;
 begin
   WidgetNode := ANode;
   WidgetNode.HandledObject := Self;
@@ -80,7 +81,7 @@ begin
       atvObject:
       begin
         ObjProp := TSamaObjectProperty.Create;
-          ObjProp.WidgetControl := TPersistent(GetPropInfo(WidgetControl, WidgetNode.Childs.Keys[i]));
+          ObjProp.WidgetControl := TPersistent(GetObjectProp(WidgetControl, WidgetNode.Childs.Keys[i]));
           ObjProp.InitNode(WidgetNode.Childs.Data[i]);
 
           ObjProp.Free;
