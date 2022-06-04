@@ -20,6 +20,9 @@ type
     procedure InitNode(ANode: TLsonNode);
   end;
 
+var
+  isDesigning: boolean;
+
 implementation
 uses
   Samarinda.Forms;
@@ -87,6 +90,9 @@ begin
   end;
 
 end;
+
+initialization
+isDesigning := True;
 
 end.
 

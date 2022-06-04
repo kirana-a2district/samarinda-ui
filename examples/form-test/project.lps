@@ -8,9 +8,9 @@
       <Unit>
         <Filename Value="project.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="1"/>
-        <CursorPos X="3" Y="8"/>
-        <UsageCount Value="147"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="13" Y="15"/>
+        <UsageCount Value="217"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -20,20 +20,19 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="39"/>
-        <CursorPos X="37" Y="58"/>
-        <UsageCount Value="147"/>
+        <CursorPos X="39" Y="58"/>
+        <UsageCount Value="217"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="sample_form.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="17"/>
-        <CursorPos X="27" Y="27"/>
-        <UsageCount Value="129"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="14"/>
+        <CursorPos X="83" Y="14"/>
+        <UsageCount Value="199"/>
+        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="samarinda-ui\src\samarinda.forms.pas"/>
@@ -41,7 +40,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="118"/>
         <CursorPos X="9" Y="111"/>
-        <UsageCount Value="69"/>
+        <UsageCount Value="62"/>
       </Unit>
       <Unit>
         <Filename Value="samarinda-ui\src\template_form\samaui_template_form.pas"/>
@@ -51,7 +50,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="27"/>
+        <UsageCount Value="20"/>
       </Unit>
       <Unit>
         <Filename Value="samarinda-ui\src\samarinda.widgets.pas"/>
@@ -59,7 +58,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="98"/>
         <CursorPos X="6" Y="116"/>
-        <UsageCount Value="69"/>
+        <UsageCount Value="62"/>
       </Unit>
       <Unit>
         <Filename Value="samarinda-ui\src\samarinda.buttons.pas"/>
@@ -67,7 +66,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="18"/>
         <CursorPos X="22" Y="33"/>
-        <UsageCount Value="35"/>
+        <UsageCount Value="28"/>
       </Unit>
       <Unit>
         <Filename Value="samarinda-ui\src\samarinda.widgethandler.pas"/>
@@ -75,7 +74,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="3"/>
         <CursorPos X="85" Y="8"/>
-        <UsageCount Value="32"/>
+        <UsageCount Value="25"/>
       </Unit>
       <Unit>
         <Filename Value="..\lapis-lson\src\lapis.lson.pas"/>
@@ -83,14 +82,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="545"/>
         <CursorPos Y="564"/>
-        <UsageCount Value="4"/>
-      </Unit>
-      <Unit>
-        <Filename Value="..\lapis-lson\src\lapis.typeutils.pas"/>
-        <UnitName Value="Lapis.TypeUtils"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="10"/>
-        <UsageCount Value="1"/>
+        <UsageCount Value="7"/>
       </Unit>
       <Unit>
         <Filename Value="C:\fpcup\files\lazarus\lcl\stdctrls.pp"/>
@@ -98,15 +90,14 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="1267"/>
         <CursorPos X="14" Y="1278"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="4"/>
       </Unit>
       <Unit>
         <Filename Value="C:\fpcup\files\fpcsrc\rtl\objpas\classes\classesh.inc"/>
-        <EditorIndex Value="5"/>
-        <TopLine Value="417"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="424"/>
         <CursorPos X="3" Y="429"/>
-        <UsageCount Value="13"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="28"/>
       </Unit>
       <Unit>
         <Filename Value="samarinda-ui\src\samarinda.containers.pas"/>
@@ -114,44 +105,44 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="23"/>
         <CursorPos X="3" Y="28"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="15"/>
       </Unit>
       <Unit>
         <Filename Value="samarinda-ui\pkg\samarinda_ui.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="37" Y="20"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="2"/>
       </Unit>
       <Unit>
         <Filename Value="C:\fpcup\files\lazarus\lcl\extctrls.pp"/>
         <UnitName Value="ExtCtrls"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="1097"/>
-        <CursorPos X="3" Y="1110"/>
-        <UsageCount Value="12"/>
+        <TopLine Value="1113"/>
+        <CursorPos X="14" Y="1123"/>
+        <UsageCount Value="27"/>
       </Unit>
       <Unit>
         <Filename Value="D:\dev_projects\laz_lcl\lapis-lson\src\lapis.lson.pas"/>
         <UnitName Value="Lapis.Lson"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="184"/>
         <CursorPos X="60" Y="85"/>
-        <UsageCount Value="12"/>
+        <UsageCount Value="7"/>
       </Unit>
       <Unit>
         <Filename Value="C:\fpcup\files\lazarus\lcl\include\control.inc"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="4"/>
         <TopLine Value="2945"/>
         <CursorPos Y="2957"/>
-        <UsageCount Value="18"/>
+        <UsageCount Value="53"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="..\..\src\samarinda.panels.pas"/>
         <UnitName Value="Samarinda.Panels"/>
-        <EditorIndex Value="8"/>
-        <CursorPos X="22" Y="48"/>
-        <UsageCount Value="16"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="10"/>
+        <CursorPos X="32" Y="26"/>
+        <UsageCount Value="51"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -159,14 +150,14 @@
         <UnitName Value="Samarinda.WidgetHandler"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="19" Y="9"/>
-        <UsageCount Value="12"/>
+        <UsageCount Value="5"/>
       </Unit>
       <Unit>
         <Filename Value="..\..\src\samarinda.labels.pas"/>
         <UnitName Value="Samarinda.Labels"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="5"/>
         <CursorPos X="20" Y="27"/>
-        <UsageCount Value="26"/>
+        <UsageCount Value="61"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -175,32 +166,34 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="21"/>
         <CursorPos Y="39"/>
-        <UsageCount Value="12"/>
+        <UsageCount Value="5"/>
       </Unit>
       <Unit>
         <Filename Value="..\..\src\samarinda.widgets.pas"/>
         <UnitName Value="Samarinda.Widgets"/>
-        <EditorIndex Value="9"/>
+        <EditorIndex Value="8"/>
         <TopLine Value="107"/>
         <CursorPos X="13" Y="127"/>
-        <UsageCount Value="13"/>
+        <UsageCount Value="48"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="..\..\src\samarinda.forms.pas"/>
         <UnitName Value="Samarinda.Forms"/>
-        <EditorIndex Value="10"/>
-        <CursorPos X="39" Y="9"/>
-        <UsageCount Value="13"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="9"/>
+        <TopLine Value="121"/>
+        <CursorPos X="3" Y="16"/>
+        <UsageCount Value="48"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="C:\fpcup\files\lazarus\lcl\controls.pp"/>
         <UnitName Value="Controls"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="631"/>
-        <CursorPos X="3" Y="644"/>
-        <UsageCount Value="11"/>
+        <TopLine Value="1108"/>
+        <CursorPos X="3" Y="1122"/>
+        <UsageCount Value="26"/>
       </Unit>
       <Unit>
         <Filename Value="C:\fpcup\files\fpcsrc\rtl\objpas\typinfo.pp"/>
@@ -208,14 +201,14 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="58"/>
         <CursorPos X="8" Y="64"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="4"/>
       </Unit>
       <Unit>
         <Filename Value="C:\fpcup\files\fpcsrc\rtl\inc\rttih.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="13"/>
         <CursorPos X="3" Y="22"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="4"/>
       </Unit>
       <Unit>
         <Filename Value="..\..\src\samarinda.comutils.pas"/>
@@ -223,70 +216,72 @@
         <EditorIndex Value="11"/>
         <TopLine Value="48"/>
         <CursorPos X="68" Y="64"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="59"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="C:\fpcup\files\lazarus\components\synedit\synedit.pp"/>
         <UnitName Value="SynEdit"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="3"/>
         <TopLine Value="1139"/>
         <CursorPos X="14" Y="1150"/>
-        <UsageCount Value="12"/>
+        <UsageCount Value="47"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="C:\fpcup\files\lazarus\components\synedit\syneditmiscclasses.pp"/>
         <UnitName Value="SynEditMiscClasses"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="470"/>
-        <CursorPos X="3" Y="481"/>
-        <UsageCount Value="12"/>
-        <Loaded Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="493"/>
+        <CursorPos X="50" Y="494"/>
+        <UsageCount Value="27"/>
       </Unit>
       <Unit>
         <Filename Value="C:\fpcup\files\lazarus\components\synedit\synedithighlighter.pp"/>
         <UnitName Value="SynEditHighlighter"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="96"/>
         <CursorPos X="3" Y="75"/>
-        <UsageCount Value="12"/>
+        <UsageCount Value="27"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\fpcup\files\lazarus\components\synedit\synbeautifier.pas"/>
+        <UnitName Value="SynBeautifier"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="13"/>
+        <CursorPos X="90" Y="16"/>
+        <UsageCount Value="26"/>
         <Loaded Value="True"/>
       </Unit>
+      <Unit>
+        <Filename Value="..\..\src\template_form\samaui_template_form.pas"/>
+        <ComponentName Value="TemplateForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="10"/>
+        <CursorPos X="3" Y="11"/>
+        <UsageCount Value="26"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\forms.pp"/>
+        <UnitName Value="Forms"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="141"/>
+        <CursorPos X="3" Y="155"/>
+        <UsageCount Value="7"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\lclclasses.pp"/>
+        <UnitName Value="LCLClasses"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="29"/>
+        <CursorPos X="3" Y="43"/>
+        <UsageCount Value="7"/>
+      </Unit>
     </Units>
-    <JumpHistory HistoryIndex="26">
-      <Position>
-        <Filename Value="unit1.pas"/>
-        <Caret Line="50" Column="31" TopLine="37"/>
-      </Position>
-      <Position>
-        <Filename Value="C:\fpcup\files\lazarus\components\synedit\synedit.pp"/>
-        <Caret Line="1290" Column="14" TopLine="1281"/>
-      </Position>
-      <Position>
-        <Filename Value="C:\fpcup\files\lazarus\components\synedit\synedit.pp"/>
-        <Caret Line="1150" Column="14" TopLine="1139"/>
-      </Position>
-      <Position>
-        <Filename Value="C:\fpcup\files\lazarus\components\synedit\syneditmiscclasses.pp"/>
-        <Caret Line="481" Column="3" TopLine="470"/>
-      </Position>
-      <Position>
-        <Filename Value="C:\fpcup\files\lazarus\components\synedit\synedithighlighter.pp"/>
-        <Caret Line="216" Column="3" TopLine="204"/>
-      </Position>
-      <Position>
-        <Filename Value="C:\fpcup\files\lazarus\components\synedit\synedithighlighter.pp"/>
-        <Caret Line="140" Column="3" TopLine="128"/>
-      </Position>
-      <Position>
-        <Filename Value="C:\fpcup\files\lazarus\components\synedit\synedithighlighter.pp"/>
-        <Caret Line="75" Column="3" TopLine="63"/>
-      </Position>
-      <Position>
-        <Filename Value="unit1.pas"/>
-        <Caret Line="50" Column="31" TopLine="37"/>
-      </Position>
+    <JumpHistory HistoryIndex="20">
       <Position>
         <Filename Value="C:\fpcup\files\lazarus\components\synedit\synedit.pp"/>
         <Caret Line="1290" Column="14" TopLine="1279"/>
@@ -294,22 +289,6 @@
       <Position>
         <Filename Value="C:\fpcup\files\lazarus\components\synedit\synedit.pp"/>
         <Caret Line="1150" Column="14" TopLine="1139"/>
-      </Position>
-      <Position>
-        <Filename Value="C:\fpcup\files\lazarus\components\synedit\syneditmiscclasses.pp"/>
-        <Caret Line="481" Column="3" TopLine="470"/>
-      </Position>
-      <Position>
-        <Filename Value="C:\fpcup\files\lazarus\components\synedit\synedithighlighter.pp"/>
-        <Caret Line="216" Column="3" TopLine="204"/>
-      </Position>
-      <Position>
-        <Filename Value="C:\fpcup\files\lazarus\components\synedit\synedithighlighter.pp"/>
-        <Caret Line="140" Column="3" TopLine="128"/>
-      </Position>
-      <Position>
-        <Filename Value="C:\fpcup\files\lazarus\components\synedit\synedithighlighter.pp"/>
-        <Caret Line="75" Column="3" TopLine="63"/>
       </Position>
       <Position>
         <Filename Value="..\..\src\samarinda.widgets.pas"/>
@@ -362,6 +341,30 @@
       <Position>
         <Filename Value="..\..\src\samarinda.forms.pas"/>
         <Caret Line="12" Column="21"/>
+      </Position>
+      <Position>
+        <Filename Value="..\..\src\samarinda.panels.pas"/>
+        <Caret Line="33" Column="20" TopLine="17"/>
+      </Position>
+      <Position>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="58" Column="39" TopLine="31"/>
+      </Position>
+      <Position>
+        <Filename Value="sample_form.pas"/>
+        <Caret Line="41" TopLine="16"/>
+      </Position>
+      <Position>
+        <Filename Value="project.lpr"/>
+        <Caret Line="15" Column="13"/>
+      </Position>
+      <Position>
+        <Filename Value="..\..\src\samarinda.forms.pas"/>
+        <Caret Line="146" Column="34"/>
+      </Position>
+      <Position>
+        <Filename Value="..\..\src\template_form\samaui_template_form.pas"/>
+        <Caret Line="11" Column="3"/>
       </Position>
     </JumpHistory>
     <RunParams>

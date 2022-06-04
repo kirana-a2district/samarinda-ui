@@ -1,0 +1,32 @@
+Caption: "New Form"
+Position: poScreenCenter
+Button/btn1 {
+  Caption: "hello"
+}
+Label/lbSomething {
+  Caption: "Something moyang"
+  Top: 30
+  Left: 5
+  Font {
+    Size: 30
+  }
+}
+Panel/Container {
+  Top: 70
+  Width: 300
+  Height: 200
+  Caption: "this is container"
+  Button/btn2 {
+    Caption: "Button 2 inside of container"
+    Font {
+      Size: 13
+    }
+  }
+  Panel/SubContainer{
+    Caption: "container"
+    Height: 100
+    Button/btn3 {
+      Caption: "button 3 anyway"
+    }
+  }
+}

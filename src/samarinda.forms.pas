@@ -6,18 +6,22 @@ interface
 
 uses
   Classes, SysUtils, Forms, resource, TypInfo,Controls,  Dialogs,
-  samaui_template_form, fgl, StrUtils,
+  samaui_template_form, fgl, StrUtils, base_window, LCLType,
   Lapis.Lson,
   Samarinda.Widgets,
   Samarinda.ComUtils;
 
 type
   TProcCallBack = procedure of object;
+
   TWidgetMap = specialize TFPGMap<string, TComponent>;
 
   TSamaForm = class(TTemplateForm)
   private
     Parser: TLSONNode;
+    BaseWindow: TfrBaseWindow;
+  protected
+    procedure PaintWindow(dc: Hdc); override;
   public
     WidgetMap: TWidgetMap;
     WidgetNodeMap: TWidgetMap;
@@ -36,6 +40,26 @@ begin
   inherited Create(AOwner);
   WidgetMap := TWidgetMap.Create;
   WidgetNodeMap := TWidgetMap.Create;
+  if not isDesigning then
+  begin
+    BaseWindow := TfrBaseWindow.Create(self);
+    BaseWindow.embeddedForm := Self;
+    OnShow := BaseWindow.OnShow;
+
+  end;
+end;
+
+procedure TSamaForm.PaintWindow(dc: Hdc);
+begin
+  if Assigned(BaseWindow) then
+  begin
+    if BaseWindow.lbTitlebar.Caption <> Caption then
+    begin
+      BaseWindow.Caption := Caption;
+      BaseWindow.lbTitlebar.Caption := Caption
+    end;
+  end;
+  inherited PaintWindow(dc);
 end;
 
 destructor TSamaForm.Destroy;

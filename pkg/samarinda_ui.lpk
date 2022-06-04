@@ -45,8 +45,19 @@
         <Filename Value="..\src\samarinda.labels.pas"/>
         <UnitName Value="Samarinda.Labels"/>
       </Item>
+      <Item>
+        <Filename Value="..\src\template_form\base_window.pas"/>
+        <UnitName Value="base_window"/>
+      </Item>
+      <Item>
+        <Filename Value="..\src\template_form\base_window_maximisehint.pas"/>
+        <UnitName Value="base_window_maximisehint"/>
+      </Item>
     </Files>
     <RequiredPkgs>
+      <Item>
+        <PackageName Value="bgracontrols"/>
+      </Item>
       <Item>
         <PackageName Value="lapislson"/>
       </Item>

@@ -30,6 +30,7 @@ begin
     ChildSizing.EnlargeHorizontal := crsHomogenousSpaceResize;
     ChildSizing.EnlargeVertical := crsHomogenousSpaceResize;
     ChildSizing.Layout := cclLeftToRightThenTopToBottom;
+    BorderStyle := bsNone;
   end;
 end;
 
