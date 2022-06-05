@@ -3,6 +3,6 @@ object TemplateForm: TTemplateForm
   Height = 240
   Top = 250
   Width = 320
-  Caption = 'TemplateForm'
+  Caption = 'Untitled'
   DesignTimePPI = 120
 end

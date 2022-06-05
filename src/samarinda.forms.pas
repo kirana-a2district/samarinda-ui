@@ -36,6 +36,9 @@ uses
   Samarinda.WidgetHandler;
 
 constructor TSamaForm.Create(AOwner: TComponent);
+var
+  S: TResourceStream;
+  SL: TStrings;
 begin
   inherited Create(AOwner);
   WidgetMap := TWidgetMap.Create;
@@ -45,7 +48,19 @@ begin
     BaseWindow := TfrBaseWindow.Create(self);
     BaseWindow.embeddedForm := Self;
     OnShow := BaseWindow.OnShow;
+  end;
 
+  if FindResource(HINSTANCE, Self.UnitName, RT_RCDATA) <> 0 then
+  begin
+    S := TResourceStream.Create(HINSTANCE, Self.UnitName, RT_RCDATA);
+    SL := TStringList.Create;
+    try
+      SL.LoadFromStream(S);
+      LoadFromString(SL.Text);
+    finally
+      S.Free;
+      SL.Free;
+    end;
   end;
 end;
 
@@ -73,7 +88,7 @@ end;
 
 procedure TSamaForm.PostLoad;
 begin
-
+  // do nothing
 end;
 
 procedure TSamaForm.LoadFromString(AVal: string);

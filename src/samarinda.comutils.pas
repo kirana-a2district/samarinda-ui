@@ -41,12 +41,10 @@ procedure TSamaObjectProperty.InitNode(ANode: TLSONNode);
 var
   cInfo: pointer;
   cPropInfo: PPropInfo;
-  i, j: integer;
+  i: integer;
   SL: TStrings;
   ObjName, ClsName: string;
-  WidgetObj: TObject;
   ObjProp: TSamaObjectProperty;
-  propList: PPropList;
 begin
   WidgetNode := ANode;
   WidgetNode.HandledObject := Self;
@@ -93,7 +91,7 @@ begin
 end;
 
 initialization
-isDesigning := True;
+isDesigning := False;
 
 end.
 
